@@ -7,18 +7,6 @@ template <typename TIPO, int MAX>
     int quantidade;
 };
 
-struct pessoal{
-  int ID;
-  bool verif=false;
-  string CPF, nome, cel;
-};
-
-struct comercial{
-  int ID, CNPJ, tel;
-  bool verif=true;
-  string nome_emp;
-};
-
 // Inicializa a agenda. Inicializações: Define que agenda está sem nenhum item
 template <typename TIPO, int MAX>
 bool inicializa_agenda(agenda <TIPO,MAX> &ag) {
@@ -40,6 +28,7 @@ void insere(agenda <TIPO,MAX> &ag1){
   }
 }
 
+template <typename TIPO, int MAX>
 void insere_COM(agenda <TIPO,MAX> &ag){
   {
     cout<<"digite o CNPJ";
@@ -53,8 +42,8 @@ void insere_COM(agenda <TIPO,MAX> &ag){
   }
 }
 
+template <typename TIPO, int MAX>
 void insere_PES(agenda <TIPO,MAX> &ag){
-  {
     cout<<"digite o CPF";
     cin>>ag.itens[0].CPF;
     cout<<"digite o NOME";
