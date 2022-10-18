@@ -20,7 +20,11 @@ int tipo_contato(string tipo_operacao){ //SELECIONA QUAL AGENDA INSERIR O CONTAT
   int tipo_contato;
 
   while(true){
-    cout << "Qual tipo de contato você deseja "<<tipo_operacao<<" ? 1 - Pessoal\t2 - Comercial\n";
+    cout<< "_________________________________________________________________";
+    cout << "\n|\t\Qual tipo de contato você deseja "<<tipo_operacao<<"?  \t\t|";
+    cout<< "\n|\t\t\t1 - Pessoal\t\t\t\t|";
+    cout<< "\n|\t\t\t2 - Comercial\t\t\t\t|";
+    cout<< "\n|_______________________________________________________________|\n";
     cin >> tipo_contato;
     if(tipo_contato==1){
       return 1;
@@ -35,7 +39,11 @@ int tipo_pesquisa(){ //SELECIONA QUAL DADO A SER PESQUISADO
   int tipo_pesquisa;
 
   while(true){
-    cout << "Qual tipo de pesquisa você deseja ?"<<" 1 - ID\t2 - Nome\n";
+    cout<< "__________________________________________";
+    cout << "\n|   Qual tipo de pesquisa você deseja ? |";
+    cout<< " \n|\t\t1 - ID     \t\t |";
+    cout<< " \n|\t\t2 - Nome      \t\t |\n";
+    cout<< "|________________________________________|\n";
     cin >> tipo_pesquisa;
     if(tipo_pesquisa==1){
       return 1;
@@ -105,17 +113,26 @@ int main() {
     inicializa_agenda(ag1);
     inicializa_agenda(ag2);
     string tipo_operacao;
-    
+
     do {
       //system("cls");
-      cout << "\n\nSelecione uma operação:\n1 - Inserir item\n2 - Remover item\n3 - Pesquisar\n4 - Ordenar agenda\n5 - Mostrar todos os itens\n6 - Encerrar\n";
+      cout<< " ________________________________________";
+      cout<< "\n|\t\t\t\t\t|";
+      cout << "\n|\tSelecione uma operação:\t|";
+      cout<< "\n|\t1 - Inserir item\t\t|";
+      cout<< "\n|\t2 - Remover item\t\t|";
+      cout<< "\n|\t3 - Pesquisar\t\t\t|";
+      cout<< "\n|\t4 - Ordenar agenda\t\t|";
+      cout<< "\n|\t5 - Mostrar todos os itens\t|";
+      cout<< "\n|\t6 - Encerrar\t\t\t|";
+      cout<< "\n|_______________________________________|\n";
       cin >> operacao;
 
       switch(operacao) {  //ESCOLHE A OPERAÇÃO A SER REALIZADA
-      
+
       case 1:  //OPERAÇÃO DE INSERÇÃO
         tipo_operacao="inserir";
-        
+
         if(tipo_contato(tipo_operacao)==1){  //INSERIR TIPO PESSOAL
           pessoal ag_temp1;
           cin>>ag_temp1;
@@ -131,7 +148,7 @@ int main() {
         case 2: //OPERAÇÃO DE REMOÇÃO
           int ID_pesquisa;
           tipo_operacao="remover";
-          
+
           if(tipo_contato(tipo_operacao)==1){  //REMOVE TIPO PESSOAL
             pessoal ag_temp1;
 
@@ -140,10 +157,10 @@ int main() {
           }
           else{ // REMOVE TIPO COMERCIAL
             comercial ag_temp2;
-            
+
             cout<<"Digite o ID a ser excluído: ";
             cin>>ID_pesquisa;
-            
+
             ag_temp2.ID=0;
             ag_temp2.CNPJ=0;
             ag_temp2.nome="";
@@ -157,7 +174,7 @@ int main() {
         tipo_operacao="pesquisar";
         int id=0;
         string nome="";
-          
+
         if(tipo_contato(tipo_operacao)==1){  //PESQUISA TIPO PESSOAL
           if(tipo_pesquisa()==1){
             cout<<"Digite o ID: ";
@@ -168,8 +185,8 @@ int main() {
             cout<<"Digite o nome: ";
             cin>>nome;
             pesquisa(ag1,id,nome);
-          }  
-        }  
+          }
+        }
         else{ //PESQUISA TIPO COMERCIAL
           if(tipo_pesquisa()==1){
             cout<<"Digite o ID: ";
@@ -186,7 +203,7 @@ int main() {
         }
 //--------------------------------------------------------------------------------------------
         case 4:
-          
+
         break;
 
         case 5:
